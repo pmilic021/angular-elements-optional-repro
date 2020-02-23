@@ -7,11 +7,14 @@ import { Router } from '@angular/router';
 })
 export class TestComponent {
   constructor(injector: Injector) {
-    try {
-      console.log('Trying to load Router in `test.component.ts`...');
-      console.log(injector.get(Router, 'success' as unknown as Router, InjectFlags.Optional));
-    } catch (e) {
-      console.log('fail', e);
-    }
+    // when used with setTimeout, the issue disappears
+    // setTimeout(() => {
+      try {
+        console.log('Trying to load Router in `test.component.ts`...');
+        console.log(injector.get(Router, 'success' as unknown as Router, InjectFlags.Optional));
+      } catch (e) {
+        console.log('fail', e);
+      }
+    // }, 0);
   }
 }

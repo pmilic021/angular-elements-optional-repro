@@ -12,7 +12,7 @@ import { TestComponent } from './test.component';
   imports: [
     BrowserModule
   ],
-  providers: []
+  entryComponents: [TestComponent]
 })
 export class TestModule {
   constructor(injector: Injector) {
